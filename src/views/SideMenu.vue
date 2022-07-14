@@ -5,7 +5,9 @@
     direction="ltr"
     size="85%"
   >
-    Hello, world!
+    <div class="item" v-for="item of items">
+      Item
+    </div>
   </el-drawer>
 </template>
 
@@ -14,6 +16,10 @@ import {useSideMenu} from "@/use/useSideMenu.js";
 import {watch} from "vue";
 
 const sideMenu = useSideMenu()
+
+const items = [
+  {name: 'Главная', }
+]
 
 </script>
 

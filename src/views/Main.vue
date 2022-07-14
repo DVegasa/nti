@@ -12,7 +12,7 @@
 
 <style lang="scss" scoped>
 .main {
-  background-color: #8ff1ab;
   font-size: 30px;
+  padding: 10px;
 }
 </style>

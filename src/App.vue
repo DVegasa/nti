@@ -25,6 +25,7 @@ export default {
 
 html,
 body {
+  background-color: $color-background;
 }
 
 .appRoot {
@@ -32,7 +33,6 @@ body {
   .routerView {
     margin-top: 50px;
     margin-bottom: 50px;
-    background-color: blue;
   }
 
 }
