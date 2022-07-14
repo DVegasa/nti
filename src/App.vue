@@ -31,6 +31,11 @@ body {
 .el-drawer {
   background-color: $color-background !important;
   color: $color-text-light !important;
+  padding: 0 !important;
+}
+
+.el-drawer__body {
+  padding: 2px !important;
 }
 
 .el-button--warning {
