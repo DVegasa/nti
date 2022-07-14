@@ -11,6 +11,8 @@
     <div class="panels top">
       <div class="content">
         <MainEvents />
+        <MainScore type="football"/>
+        <MainScore type="hockey" />
         <MainEvents />
         <MainEvents />
       </div>
@@ -22,6 +24,7 @@
 import {Icon} from "@iconify/vue"
 import MainEvents from "@/views/main/MainEvents.vue";
 import MainStories from "@/views/main/MainStories.vue";
+import MainScore from "@/views/main/MainScore.vue";
 </script>
 
 <style lang="scss" scoped>

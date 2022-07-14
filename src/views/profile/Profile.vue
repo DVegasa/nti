@@ -44,11 +44,11 @@
 
     </div>
 
-    <div class="panels top">
-      <div class="content">
-        <h1>Награды</h1>
-      </div>
-    </div>
+<!--    <div class="panels top">-->
+<!--      <div class="content">-->
+<!--        <h1>Награды</h1>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
