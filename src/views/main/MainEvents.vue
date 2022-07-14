@@ -29,7 +29,7 @@
               <img :src="require('@/assets/ed.jpg')" class="avatar">
               <div class="text">Эдуард будет играть!</div>
             </div>
-            <el-button type="warning">Присоединиться</el-button>
+            <el-button type="warning" @click="$emit('join')">Присоединиться</el-button>
           </div>
         </el-card>
       </SwiperSlide>

@@ -10,11 +10,11 @@
 
     <div class="panels top">
       <div class="content">
-        <MainEvents />
+        <MainEvents @join="goToEvent" />
         <MainScore type="football"/>
         <MainScore type="hockey" />
-        <MainEvents />
-        <MainEvents />
+        <MainEvents @join="goToEvent" />
+        <MainEvents @join="goToEvent" />
       </div>
     </div>
   </div>
@@ -25,10 +25,23 @@ import {Icon} from "@iconify/vue"
 import MainEvents from "@/views/main/MainEvents.vue";
 import MainStories from "@/views/main/MainStories.vue";
 import MainScore from "@/views/main/MainScore.vue";
+import {ref} from "vue";
+import {useRouter} from "vue-router"
+
+const router = useRouter();
+const goToEvent = () => router.push('/event');
 </script>
 
 <style lang="scss" scoped>
 $backHeight: 240px;
+
+.dialog {
+  width: 90%;
+
+  .content {
+    width: 100%;
+  }
+}
 
 .main {
   position:absolute;
