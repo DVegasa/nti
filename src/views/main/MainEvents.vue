@@ -13,10 +13,22 @@
       <SwiperSlide v-for="slide in slides" :key="slide.title" class="slide">
         <el-card class="card">
           <img :src="require('@/assets/football.png')" alt="" class="img" />
-          <div class="subtitle">Сегодня в 10:00</div>
+          <div class="subtitle">
+            <div class="left">Сегодня в 10:00</div>
+            <div class="right">Осталось три места!</div>
+          </div>
           <h1 class="text">{{slide.title}}</h1>
           <div class="bottom">
-            <div style="flex: 1"/>
+<!--            <div class="avatars">-->
+<!--              <img :src="require('@/assets/ed.jpg')" class="avatar" style="right: -32px">-->
+<!--              <img :src="require('@/assets/ed.jpg')" class="avatar" style="right: -21px">-->
+<!--              <img :src="require('@/assets/ed.jpg')" class="avatar" style="right: -10px">-->
+<!--              <img :src="require('@/assets/ed.jpg')" class="avatar">-->
+<!--            </div>-->
+            <div style="flex: 1" class="description">
+              <img :src="require('@/assets/ed.jpg')" class="avatar">
+              <div class="text">Эдуард будет играть!</div>
+            </div>
             <el-button type="warning">Присоединиться</el-button>
           </div>
         </el-card>
@@ -56,9 +68,12 @@ const slides = [
 
     .slide {
       border-radius: 20px;
+      padding-bottom: 40px;
 
       .card {
         border-radius: 30px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
         //height: 300px;
         display: flex;
         flex-direction: column;
@@ -75,6 +90,20 @@ const slides = [
           padding-left: 10px;
           color: $color-text-weak;
           font-size: 14px;
+
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-right: 10px;
+
+          .left {
+            flex: 1;
+          }
+
+          .right {
+            color: $color-primary;
+            font-weight: bold;
+          }
         }
 
         .text {
@@ -87,7 +116,37 @@ const slides = [
           flex-direction: row;
           align-items: center;
           padding-right: 10px;
-          margin-bottom: 40px;
+          padding-left: 6px;
+          padding-top: 12px;
+          padding-bottom: 10px;
+
+          .description {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+
+            .text {
+              font-size: 14px;
+              color: $color-text-weak;
+              padding: 0;
+              margin-top: 2px;
+            }
+          }
+
+          .avatars {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .avatar {
+            position: relative;
+            height: 24px;
+            width: 24px;
+            border-radius: 1000px;
+            border: 4px solid $color-background-light;
+          }
         }
       }
     }
