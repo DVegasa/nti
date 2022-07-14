@@ -1,6 +1,7 @@
 <template>
   <div class="appRoot">
     <AppHeader />
+    <SideMenu />
     <router-view class="routerView"/>
     <BottomMenu />
   </div>
@@ -9,11 +10,13 @@
 <script>
 import AppHeader from "@/views/AppHeader.vue";
 import BottomMenu from "@/views/BottomMenu.vue";
+import SideMenu from "@/views/SideMenu.vue";
 export default {
-  components: {BottomMenu, AppHeader}
+  components: {SideMenu, BottomMenu, AppHeader}
 }
 </script>
 <style lang="scss">
+
 * {
   margin: 0;
   padding: 0;
@@ -22,14 +25,9 @@ export default {
 
 html,
 body {
-  //height: 100%;
 }
 
 .appRoot {
-  //height: 100vh;
-  //display: flex;
-  //flex-direction: column;
-
 
   .routerView {
     margin-top: 50px;
@@ -38,6 +36,5 @@ body {
   }
 
 }
-
 
 </style>
