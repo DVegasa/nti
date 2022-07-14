@@ -1,29 +1,29 @@
 <template>
   <div class="bottomMenu">
 
-    <router-link to="/events" :class="{item: true, selected: isSelected('/a')}">
+    <router-link to="/" :class="{item: true, selected: isSelected('/')}">
       <Icon icon="bx:home" class="icon" />
+      <div class="label">Главная</div>
+    </router-link>
+
+    <router-link to="/events" :class="{item: true, selected: isSelected('/events')}">
+      <Icon icon="bx:calendar-event" class="icon" />
       <div class="label">События</div>
     </router-link>
 
-    <router-link to="/" :class="{item: true, selected: isSelected('/b')}">
-      <Icon icon="bx:home" class="icon" />
-      <div class="label">Домашняяяя</div>
+    <router-link to="/profile" :class="{item: true, selected: isSelected('/profile')}">
+      <Icon icon="bx:user-circle" class="icon" />
+      <div class="label">Я</div>
     </router-link>
 
-    <router-link to="/" :class="{item: true, selected: isSelected('/c')}">
-      <Icon icon="bx:home" class="icon" />
-      <div class="label">x</div>
+    <router-link to="/friends" :class="{item: true, selected: isSelected('/friends')}">
+      <Icon icon="bx:group" class="icon" />
+      <div class="label">Друзья</div>
     </router-link>
 
-    <router-link to="/" :class="{item: true, selected: isSelected('/d')}">
-      <Icon icon="bx:home" class="icon" />
-      <div class="label">Домашняя</div>
-    </router-link>
-
-    <router-link to="/" :class="{item: true, selected: isSelected('/e')}">
-      <Icon icon="bx:home" class="icon" />
-      <div class="label">x</div>
+    <router-link @click="openMenu" to="#" :class="{item: true, selected: isSelected('-')}">
+      <Icon icon="bx:menu" class="icon" />
+      <div class="label">Меню</div>
     </router-link>
 
   </div>
@@ -33,17 +33,23 @@
 import {Icon} from "@iconify/vue"
 import {useRoute} from "vue-router"
 import {computed} from "vue"
+import {useSideMenu} from "@/use/useSideMenu.js";
 
 const route = useRoute()
+const sideMenu = useSideMenu()
 
 const isSelected = (r) => route.path === r
+
+const openMenu = () => {
+  sideMenu.show()
+}
 </script>
 
 <style lang="scss" scoped>
 
 .bottomMenu {
-  background-color: white;
-  height: 50px;
+  background-color: $color-background;
+  height: $size-bottomMenu-height;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -54,13 +60,16 @@ const isSelected = (r) => route.path === r
   -moz-box-shadow: 0px -4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px -4px 8px 0px rgba(34, 60, 80, 0.2);
 
+  margin: 10px;
+  border-radius: 15px;
+
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .item {
     height: 100%;
@@ -69,15 +78,25 @@ const isSelected = (r) => route.path === r
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
-    color: red !important;
+    gap: 4px;
+    opacity: 0.7;
+    color: $color-background-light;
 
     .icon {
       font-size: 24px;
     }
 
     .label {
-      font-size: 13px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    &.selected {
+      opacity: 1.0;
+      color: $color-accent !important;
     }
   }
 }

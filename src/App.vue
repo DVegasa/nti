@@ -1,6 +1,6 @@
 <template>
   <div class="appRoot">
-    <AppHeader />
+<!--    <AppHeader />-->
     <SideMenu />
     <router-view class="routerView"/>
     <BottomMenu />
@@ -31,8 +31,8 @@ body {
 .appRoot {
 
   .routerView {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    //margin-top: 50px;
+    margin-bottom: $size-bottomMenu-height;
   }
 
 }

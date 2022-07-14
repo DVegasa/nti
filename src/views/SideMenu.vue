@@ -2,7 +2,7 @@
   <el-drawer
     v-model="sideMenu.visible.value"
     :with-header="false"
-    direction="ltr"
+    direction="rtl"
     size="85%"
   >
     <div class="item" v-for="item of items">

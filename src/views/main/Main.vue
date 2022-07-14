@@ -37,7 +37,6 @@
 
 <style lang="scss" scoped>
 .main {
-  font-size: 30px;
   position:absolute;
   height:100%;
   width:100%;
@@ -51,8 +50,8 @@
   }
 
   .back {
-    background-color: red;
-    height: 210px;
+    background-color: $color-background;
+    height: 320px;
 
     display: flex;
     flex-direction: row;
@@ -68,10 +67,15 @@
 
   .top {
     z-index: 10;
-    margin-top: 200px;
-    background-color: yellow;
-    border-radius: 25px;
-    padding-bottom: 50px;
+    margin-top: 300px;
+    background-color: $color-background-light;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding-bottom: calc($size-bottomMenu-height + 20px);
+
+    .content {
+      padding: 15px;
+    }
   }
 }
 </style>

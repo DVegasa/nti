@@ -34,9 +34,9 @@ const openSideMenu = () => {
   right: 0;
   z-index: 1000;
 
-  -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -webkit-box-shadow: 0px 6px 26px 17px rgba(34, 60, 80, 0.21);
+  -moz-box-shadow: 0px 6px 26px 17px rgba(34, 60, 80, 0.21);
+  box-shadow: 0px 6px 26px 17px rgba(34, 60, 80, 0.21);
 
   display: flex;
   flex-direction: row;
