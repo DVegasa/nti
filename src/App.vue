@@ -1,26 +1,43 @@
 <template>
-  <router-view/>
+  <div class="appRoot">
+    <AppHeader />
+    <router-view class="routerView"/>
+    <BottomMenu />
+  </div>
 </template>
 
+<script>
+import AppHeader from "@/views/AppHeader.vue";
+import BottomMenu from "@/views/BottomMenu.vue";
+export default {
+  components: {BottomMenu, AppHeader}
+}
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
 }
 
-nav {
-  padding: 30px;
+html,
+body {
+  //height: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.appRoot {
+  //height: 100vh;
+  //display: flex;
+  //flex-direction: column;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+
+  .routerView {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: blue;
   }
+
 }
+
+
 </style>

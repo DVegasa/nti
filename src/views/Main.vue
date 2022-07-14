@@ -1,6 +1,8 @@
 <template>
   <div class="main">
-    Main
+    <div v-for="i in 42" :key="i">
+      Element #{{i}}
+    </div>
   </div>
 </template>
 
@@ -9,4 +11,8 @@
 </script>
 
 <style lang="scss" scoped>
+.main {
+  background-color: #8ff1ab;
+  font-size: 30px;
+}
 </style>
