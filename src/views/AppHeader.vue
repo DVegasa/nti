@@ -32,6 +32,7 @@ const openSideMenu = () => {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 
   -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
