@@ -25,7 +25,7 @@ import MainStories from "@/views/main/MainStories.vue";
 </script>
 
 <style lang="scss" scoped>
-$backHeight: 260px;
+$backHeight: 240px;
 
 .main {
   position:absolute;
@@ -63,6 +63,11 @@ $backHeight: 260px;
 
       .subtext {
         color: $color-text-light-weak;
+        margin-bottom: 5px;
+      }
+
+      .mainStories {
+        padding-left: 10px;
       }
     }
   }
