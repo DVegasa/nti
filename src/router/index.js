@@ -4,6 +4,7 @@ import Profile from '@/views/profile/Profile.vue'
 import Friends from '@/views/friends/Friends.vue'
 import Events from '@/views/events/Events.vue'
 import Event from '@/views/event/Event.vue'
+import TeamCreate from '@/views/teamCreate/TeamCreate.vue'
 
 const routes = [
   {path: '/', component: Main},
@@ -11,6 +12,7 @@ const routes = [
   {path: '/friends', component: Friends},
   {path: '/events', component: Events},
   {path: '/event', component: Event},
+  {path: '/teamCreate', component: TeamCreate},
 ]
 
 const router = createRouter({

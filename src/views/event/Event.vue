@@ -10,7 +10,7 @@
     </el-card>
 
     <el-button type="warning">Присоединиться к команде</el-button>
-    <el-button type="warning">Создать новую команду</el-button>
+    <el-button type="warning" @click="$router.push('/teamCreate')">Создать новую команду</el-button>
   </div>
 </template>
 
