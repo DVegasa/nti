@@ -1,7 +1,24 @@
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  $drawer: (
-    'bg-color': red,
-  )
+  $colors: (
+    'primary': (
+      'base': #e79000,
+    ),
+    'success': (
+      'base': #9dcf00,
+    ),
+    'warning': (
+      'base': #e6a23c,
+    ),
+    'danger': (
+      'base': #f54819,
+    ),
+    'error': (
+      'base': #f54819,
+    ),
+    'info': (
+      'base': #a8adb4,
+    ),
+  ),
 );
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
@@ -9,7 +26,7 @@
 $color-background: #242734;
 $color-background-light: #F7F7FB;
 $color-text: #161616;
-$color-text-weak: #999;
+$color-text-weak: #787878;
 $color-text-light: #F7F7FB;
 $color-text-light-weak: #a4a0a0;
 $color-primary: #e79000;

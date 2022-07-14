@@ -28,8 +28,25 @@ body {
   background-color: $color-background;
 }
 
-:root::v-deep(.el-drawer) {
-  background-color: red;
+.el-drawer {
+  background-color: $color-background !important;
+  color: $color-text-light !important;
+}
+
+.el-button--warning {
+  background-color: $color-primary !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-primary !important;
+}
+
+.el-card {
+  padding: 0 !important;
+
+  .el-card__body {
+    padding: 0 !important;
+  }
 }
 
 .appRoot {

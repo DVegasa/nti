@@ -25,7 +25,7 @@
 
     <div class="panels top">
       <div class="content">
-        <h1>Ближайшие мероприятия</h1>
+        <MainEvents />
       </div>
     </div>
   </div>
@@ -33,6 +33,7 @@
 
 <script setup>
 import {Icon} from "@iconify/vue"
+import MainEvents from "@/views/main/MainEvents.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -146,6 +147,7 @@ $backHeight: 230px;
 
     .content {
       padding: 15px;
+      padding-top: 20px;
     }
   }
 }
