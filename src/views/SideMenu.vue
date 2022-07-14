@@ -4,6 +4,7 @@
     :with-header="false"
     direction="rtl"
     size="85%"
+    class="sideMenu"
   >
     <div class="item" v-for="item of items">
       Item
@@ -24,4 +25,5 @@ const items = [
 </script>
 
 <style lang="scss" scoped>
+
 </style>
