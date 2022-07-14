@@ -1,30 +1,17 @@
 <template>
   <div class="main">
     <div class="panels back">
-      <router-link to="#" class="side left">
-        <Icon icon="bx:cog" class="icon"/>
-      </router-link>
-
-      <div class="center">
-        <div class="avaArea">
-          <img :src="require('@/assets/ed.jpg')" class="ava" />
-          <div class="level">3 уровень</div>
-        </div>
-
-        <div class="texts">
-          <div class="greeting">Добрый вечер, Эдуард</div>
-          <div class="team">« Реактивные псы »</div>
-        </div>
-
+      <div class="content">
+        <h1 class="text">Самое главное</h1>
+        <div class="text subtext">За последнюю неделю</div>
+        <MainStories class="mainStories"/>
       </div>
-
-      <router-link to="#" class="side right">
-        <Icon icon="bx:bell" class="icon"/>
-      </router-link>
     </div>
 
     <div class="panels top">
       <div class="content">
+        <MainEvents />
+        <MainEvents />
         <MainEvents />
       </div>
     </div>
@@ -34,10 +21,11 @@
 <script setup>
 import {Icon} from "@iconify/vue"
 import MainEvents from "@/views/main/MainEvents.vue";
+import MainStories from "@/views/main/MainStories.vue";
 </script>
 
 <style lang="scss" scoped>
-$backHeight: 230px;
+$backHeight: 260px;
 
 .main {
   position:absolute;
@@ -46,8 +34,6 @@ $backHeight: 230px;
 
   .panels {
     position:relative;
-    //height:100%;
-    //min-height:100%;
     width:100%;
     z-index:1000;
   }
@@ -56,82 +42,27 @@ $backHeight: 230px;
     background-color: $color-background;
     height: $backHeight;
 
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: space-evenly;
-
-    position:fixed;
-    top:0;
-    left:0;
+    position: fixed;
+    top: 0;
+    left: 0;
     /* prevents your fixed panel from being on top of your subsequent panels */
     z-index: -99;
 
-    .side {
-      padding: 25px;
-
-      .icon {
-        color: $color-background-light;
-        opacity: 0.9;
-        font-size: 24px;
-      }
-    }
-
-    .center {
+    .content {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-      padding-top: 30px;
+      align-items: start;
+      width: 100%;
+      padding-left: 10px;
+      padding-top: 20px;
 
-      .avaArea {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        height: 130px;
-        width: 100px;
-
-        .ava {
-          height: 100px;
-          width: 100%;
-          border-radius: 100%;
-          object-fit: cover;
-        }
-
-        .level {
-          position: absolute;
-          bottom: 20px;
-          border-radius: 1000px;
-          background-color: $color-accent;
-          font-weight: bold;
-          font-size: 12px;
-          padding: 3px 15px 2px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content:center;
-        }
+      .text {
+        padding-left: 10px;
+        color: $color-text-light;
       }
 
-      .texts {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-
-        .greeting {
-          font-weight: bold;
-          color: white;
-        }
-
-        .team {
-          font-size: 16px;
-          color: $color-text-light-weak;
-        }
+      .subtext {
+        color: $color-text-light-weak;
       }
     }
   }
@@ -148,6 +79,9 @@ $backHeight: 230px;
     .content {
       padding: 15px;
       padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
   }
 }

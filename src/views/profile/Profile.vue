@@ -1,7 +1,26 @@
 <template>
   <div class="main">
     <div class="panels back">
-      meow
+      <router-link to="#" class="side left">
+        <Icon icon="bx:cog" class="icon"/>
+      </router-link>
+
+      <div class="center">
+        <div class="avaArea">
+          <img :src="require('@/assets/ed.jpg')" class="ava" />
+          <div class="level">3 уровень</div>
+        </div>
+
+        <div class="texts">
+          <div class="greeting">Добрый вечер, Эдуард</div>
+          <div class="team">« Реактивные псы »</div>
+        </div>
+      </div>
+
+      <router-link to="#" class="side right">
+        <Icon icon="bx:bell" class="icon"/>
+      </router-link>
+
     </div>
 
     <div class="panels top">
@@ -12,11 +31,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import {Icon} from "@iconify/vue"
 </script>
 
 <style lang="scss" scoped>
-$backHeight: 220px;
+$backHeight: 230px;
 
 .panels {
   position:relative;
@@ -38,6 +58,74 @@ $backHeight: 220px;
   left:0;
   /* prevents your fixed panel from being on top of your subsequent panels */
   z-index: -99;
+
+  .side {
+    padding: 25px;
+
+    .icon {
+      color: $color-background-light;
+      opacity: 0.9;
+      font-size: 24px;
+    }
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-top: 30px;
+
+    .avaArea {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 130px;
+      width: 100px;
+
+      .ava {
+        height: 100px;
+        width: 100%;
+        border-radius: 100%;
+        object-fit: cover;
+      }
+
+      .level {
+        position: absolute;
+        bottom: 20px;
+        border-radius: 1000px;
+        background-color: $color-accent;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 3px 15px 2px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:center;
+      }
+    }
+
+    .texts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+
+      .greeting {
+        font-weight: bold;
+        color: white;
+      }
+
+      .team {
+        font-size: 16px;
+        color: $color-text-light-weak;
+      }
+    }
+  }
 }
 
 .top {
