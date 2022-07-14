@@ -1,25 +1,46 @@
 <template>
   <div class="main">
     <div class="panels back">
-      <router-link to="#" class="side left">
-        <Icon icon="bx:cog" class="icon"/>
-      </router-link>
+      <div class="row">
+        <router-link to="#" class="side left">
+          <Icon icon="bx:cog" class="icon"/>
+        </router-link>
 
-      <div class="center">
-        <div class="avaArea">
-          <img :src="require('@/assets/ed.jpg')" class="ava" />
-          <div class="level">3 уровень</div>
+        <div class="center">
+          <div class="avaArea">
+            <img :src="require('@/assets/ed.jpg')" class="ava" />
+            <div class="level">3 уровень</div>
+          </div>
+
+          <div class="texts">
+            <div class="greeting">Добрый вечер, Эдуард</div>
+            <div class="team">« Реактивные псы »</div>
+          </div>
         </div>
 
-        <div class="texts">
-          <div class="greeting">Добрый вечер, Эдуард</div>
-          <div class="team">« Реактивные псы »</div>
-        </div>
+        <router-link to="#" class="side right">
+          <Icon icon="bx:bell" class="icon"/>
+        </router-link>
       </div>
 
-      <router-link to="#" class="side right">
-        <Icon icon="bx:bell" class="icon"/>
-      </router-link>
+      <div class="row awards">
+        <div class="award">
+          <div class="emoji">🏆</div>
+          <div class="label">1</div>
+        </div>
+        <div class="award">
+          <div class="emoji">🥇</div>
+          <div class="label">2</div>
+        </div>
+        <div class="award">
+          <div class="emoji">🏅</div>
+          <div class="label">6</div>
+        </div>
+        <div class="award">
+          <div class="emoji">😊</div>
+          <div class="label">11</div>
+        </div>
+      </div>
 
     </div>
 
@@ -36,7 +57,7 @@ import {Icon} from "@iconify/vue"
 </script>
 
 <style lang="scss" scoped>
-$backHeight: 230px;
+$backHeight: 300px;
 
 .panels {
   position:relative;
@@ -49,15 +70,45 @@ $backHeight: 230px;
   height: $backHeight;
 
   display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
 
   position:fixed;
   top:0;
   left:0;
   /* prevents your fixed panel from being on top of your subsequent panels */
   z-index: -99;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-evenly;
+
+    &.awards {
+      gap: 5px;
+      align-items: center;
+      padding-left: 70px;
+      padding-right: 70px;
+      margin-top: 20px;
+
+      .award {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .emoji {
+          font-size: 32px;
+        }
+
+        .label {
+          font-size: 14px;
+          color: $color-text-light-weak;
+        }
+      }
+    }
+  }
 
   .side {
     padding: 25px;
@@ -83,7 +134,7 @@ $backHeight: 230px;
       flex-direction: column;
       align-items: center;
       justify-content: start;
-      height: 130px;
+      height: 120px;
       width: 100px;
 
       .ava {
@@ -95,7 +146,7 @@ $backHeight: 230px;
 
       .level {
         position: absolute;
-        bottom: 20px;
+        bottom: 15px;
         border-radius: 1000px;
         background-color: $color-accent;
         font-weight: bold;
