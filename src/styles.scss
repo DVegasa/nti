@@ -18,10 +18,14 @@ $color-soft: #F59A74;
 
 $size-bottomMenu-height: 70px;
 
+#app::v-deep .el-overlay {
+  background-color: pink;
+}
+
 * {
   //color: $color-text;
   font-family: 'Overpass', sans-serif;
-  letter-spacing: -0.2px
+  letter-spacing: -0.2px;
 }
 
 h1 {

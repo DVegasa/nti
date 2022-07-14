@@ -28,6 +28,10 @@ body {
   background-color: $color-background;
 }
 
+:root::v-deep(.el-drawer) {
+  background-color: red;
+}
+
 .appRoot {
 
   .routerView {

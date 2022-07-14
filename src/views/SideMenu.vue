@@ -25,5 +25,4 @@ const items = [
 </script>
 
 <style lang="scss" scoped>
-
 </style>
