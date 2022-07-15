@@ -56,6 +56,8 @@ $backHeight: 240px;
 
   .back {
     background-color: $color-background;
+    background-image: url("@/assets/bg1.svg");
+    background-size: cover;
     height: $backHeight;
 
     position: fixed;

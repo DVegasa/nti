@@ -17,7 +17,7 @@
         </div>
       </div>
       <div style="flex: 1" />
-      <div class="item" v-for="item of items">
+      <div class="item" v-for="item of items" :key="item.id" @click="onClick(item)">
         <Icon :icon="item.icon" :class="{icon: true, special: item?.special ?? false}" />
         <div :class="{title: true, special: item?.special ?? false}">{{item.name}}</div>
       </div>
@@ -29,18 +29,27 @@
 import {Icon} from "@iconify/vue"
 import {useSideMenu} from "@/use/useSideMenu.js";
 import {watch} from "vue";
+import {useRouter} from "vue-router";
 
 const sideMenu = useSideMenu()
+const router = useRouter()
 
 const items = [
-  {icon: "bx:dumbbell", name: 'Моя сборная'},
-  {icon: "bx:money", name: 'Гранты'},
-  {icon: "bx:video-recording", name: 'Прямые трансляции'},
-  {icon: "bx:news", name: 'LIVE табло'},
-  {icon: "bx:calendar", name: 'Календарь'},
-  {icon: "bx:news", name: 'Новости'},
-  {icon: "bx:message-rounded-edit", name: 'Задать вопрос', special: true},
+  {disabled: true, id:"myTeam", icon: "bx:dumbbell", name: 'Моя сборная'},
+  {disabled: true, id:"grants", icon: "bx:money", name: 'Гранты'},
+  {disabled: true, id:"streams", icon: "bx:video-recording", name: 'Прямые трансляции'},
+  {disabled: true, id:"live", icon: "bx:news", name: 'LIVE табло'},
+  {disabled: true, id:"calendar", icon: "bx:calendar", name: 'Календарь'},
+  {disabled: true, id:"news", icon: "bx:news", name: 'Новости'},
+  {disabled: false, id:"chatAdmin", icon: "bx:message-rounded-edit", name: 'Задать вопрос', special: true},
 ]
+
+const onClick = (item) => {
+  if (!item?.disabled) {
+    sideMenu.hide()
+    router.push('/' + item.id)
+  }
+}
 
 </script>
 
