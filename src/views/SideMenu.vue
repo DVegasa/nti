@@ -36,6 +36,7 @@ const router = useRouter()
 
 const items = [
   {disabled: true, id:"myTeam", icon: "bx:dumbbell", name: 'Моя сборная'},
+  {disabled: false, id:"friends", icon: "bx:group", name: 'Друзья'},
   {disabled: true, id:"grants", icon: "bx:money", name: 'Гранты'},
   {disabled: true, id:"streams", icon: "bx:video-recording", name: 'Прямые трансляции'},
   {disabled: true, id:"live", icon: "bx:news", name: 'LIVE табло'},

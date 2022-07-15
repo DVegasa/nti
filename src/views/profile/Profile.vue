@@ -44,11 +44,50 @@
 
     </div>
 
-<!--    <div class="panels top">-->
-<!--      <div class="content">-->
-<!--        <h1>Награды</h1>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="panels top">
+      <div class="content">
+        <h1>Лента активности</h1>
+
+        <el-timeline class="timeline">
+          <el-timeline-item timestamp="Вчера" placement="top">
+            <div class="card">
+              <h3 class="title">Занял 2 место в забеге на 200м</h3>
+              <p>Серия городских забегов "Жить со вкусом!"</p>
+            </div>
+          </el-timeline-item>
+
+          <el-timeline-item timestamp="Позавчера" placement="top">
+            <div class="card">
+              <h3 class="title">Благодарность от Антона И.</h3>
+              <i>"За активное участие в спортивной жизни города"</i>
+            </div>
+          </el-timeline-item>
+
+          <el-timeline-item timestamp="10 июля" placement="top">
+            <div class="card">
+              <h3 class="title">Участие в игре в дартс</h3>
+            </div>
+          </el-timeline-item>
+          <el-timeline-item timestamp="2 июля" placement="top">
+            <div class="card">
+              <h3 class="title">Участие в игре в футбол</h3>
+              <p>Команда "Драконы"</p>
+            </div>
+          </el-timeline-item>
+          <el-timeline-item timestamp="23 июня" placement="top">
+            <div class="card">
+              <h3 class="title">Участие в игре в футбол</h3>
+            </div>
+          </el-timeline-item>
+          <el-timeline-item timestamp="14 июня" placement="top">
+            <div class="card">
+              <h3 class="title">Участие в игре в дартс</h3>
+            </div>
+          </el-timeline-item>
+
+        </el-timeline>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -58,6 +97,7 @@ import {Icon} from "@iconify/vue"
 
 <style lang="scss" scoped>
 $backHeight: 300px;
+
 
 .panels {
   position:relative;
@@ -190,6 +230,18 @@ $backHeight: 300px;
 
   .content {
     padding: 15px;
+
+    .timeline {
+      margin-top: 10px;
+
+      .card {
+        //padding: 10px !important;
+
+        &.win {
+          border: 2px solid $color-primary !important;
+        }
+      }
+    }
   }
 }
 </style>

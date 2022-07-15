@@ -16,9 +16,9 @@
       <div class="label">Я</div>
     </router-link>
 
-    <router-link to="/friends" :class="{item: true, selected: isSelected('/friends')}">
-      <Icon icon="bx:group" class="icon" />
-      <div class="label">Друзья</div>
+    <router-link to="/map" :class="{item: true, selected: isSelected('/map')}">
+      <Icon icon="bx:map-alt" class="icon" />
+      <div class="label">Карта</div>
     </router-link>
 
     <router-link @click="openMenu" to="#" :class="{item: true, selected: isSelected('-')}">

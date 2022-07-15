@@ -6,6 +6,7 @@ import Events from '@/views/events/Events.vue'
 import Event from '@/views/event/Event.vue'
 import TeamCreate from '@/views/teamCreate/TeamCreate.vue'
 import ChatAdmin from "@/views/chatAdmin/ChatAdmin.vue";
+import Map from "@/views/map/Map.vue";
 
 const routes = [
   {path: '/', component: Main},
@@ -14,7 +15,8 @@ const routes = [
   {path: '/events', component: Events},
   {path: '/event', component: Event},
   {path: '/teamCreate', component: TeamCreate},
-  {path: '/chatAdmin', component: ChatAdmin}
+  {path: '/chatAdmin', component: ChatAdmin},
+  {path: '/map', component: Map},
 ]
 
 const router = createRouter({

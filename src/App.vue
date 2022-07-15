@@ -38,6 +38,10 @@ body {
   padding: 2px !important;
 }
 
+.el-timeline-item__timestamp {
+  margin-bottom: 2px !important;
+}
+
 .el-button--warning {
   background-color: $color-primary !important;
 }
