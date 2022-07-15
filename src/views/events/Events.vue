@@ -48,7 +48,14 @@
             </div>
           </div>
         </div>
-        <MainEvents />
+        <div class="buttons">
+          <el-button type="warning" style="border-radius: 50px">🌳 Уличные виды</el-button>
+          <el-button class="plain" plain style="border-radius: 50px">🧑 Играют друзья</el-button>
+          <el-button class="plain" plain style="border-radius: 50px">❤️ Кардио</el-button>
+          <el-button class="plain" plain style="border-radius: 50px">🏆 Турниры</el-button>
+        </div>
+        <MainEvents title="Футбол" type="football" />
+        <MainEvents title="Хоккей" type="hockey" />
       </div>
     </div>
   </div>
@@ -143,6 +150,21 @@ $backHeight: 85px;
             object-fit: contain;
             margin-bottom: 3px;
           }
+        }
+      }
+
+      .buttons {
+        overflow: auto;
+        white-space: nowrap;
+        font-weight: bold;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .plain {
+          border-color: $color-primary;
+          color: $color-text;
         }
       }
     }

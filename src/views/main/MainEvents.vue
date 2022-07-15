@@ -1,6 +1,6 @@
 <template>
   <div class="mainEvents">
-    <h1>Ближайшие мероприятия</h1>
+    <h1>{{props?.title ?? 'Ближайшие мероприятия'}}</h1>
 
     <swiper
         :slidesPerView="'auto'"
@@ -10,12 +10,16 @@
         class="mySwiper"
     >
 
-      <SwiperSlide v-for="slide in slides" :key="slide.title" class="slide">
+      <SwiperSlide v-for="slide in slides()" :key="slide.title" class="slide">
         <el-card class="card">
-          <img :src="require('@/assets/football.png')" alt="" class="img" />
+          <img :src="require('@/assets/hockey.jpg')" alt="" class="img" v-if="props?.type==='hockey'" />
+          <img :src="require('@/assets/football.png')" alt="" class="img" v-else />
           <div class="subtitle">
-            <div class="left">Сегодня в 10:00</div>
-            <div class="right">Осталось три места!</div>
+            <div class="left" v-if="props?.type==='hockey'" >Завтра в 19:30</div>
+            <div class="left" v-else>Сегодня в 10:00</div>
+
+            <div class="right" v-if="props?.type==='hockey'" ></div>
+            <div class="right" v-else>Осталось три места!</div>
           </div>
           <h1 class="text">{{slide.title}}</h1>
           <div class="bottom">
@@ -26,8 +30,8 @@
 <!--              <img :src="require('@/assets/ed.jpg')" class="avatar">-->
 <!--            </div>-->
             <div style="flex: 1" class="description">
-              <img :src="require('@/assets/ed.jpg')" class="avatar">
-              <div class="text">Эдуард будет играть!</div>
+              <img :src="require('@/assets/ed.jpg')" class="avatar" v-if="props?.type!=='hockey'">
+              <div class="text" v-if="props?.type!=='hockey'">Эдуард будет играть!</div>
             </div>
             <el-button type="warning" @click="$emit('join')">Присоединиться</el-button>
           </div>
@@ -45,14 +49,24 @@ import { Pagination } from "swiper";
 
 const modules = [Pagination]
 
-const slides = [
-  {title: 'Футбол'},
-  {title: 'Футбол2'},
-  {title: 'Футбол3'},
-  {title: 'Футбол4'},
-  {title: 'Футбол5'},
-  {title: 'Футбол6'},
-]
+const props = defineProps(['title', 'type'])
+
+const slides = () => {
+  if (props?.type === 'hockey') return [
+    {title: 'Хоккей'},
+    {title: 'Хоккей2'},
+    {title: 'Хоккей3'},
+  ]
+
+  return [
+    {title: 'Футбол'},
+    {title: 'Футбол2'},
+    {title: 'Футбол3'},
+    {title: 'Футбол4'},
+    {title: 'Футбол5'},
+    {title: 'Футбол6'},
+  ]
+}
 
 
 </script>
